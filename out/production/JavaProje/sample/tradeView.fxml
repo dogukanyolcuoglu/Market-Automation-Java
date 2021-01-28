@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="582.0" prefWidth="1096.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.TradeController">
+   <children>
+      <Pane layoutX="48.0" layoutY="-1.0" prefHeight="583.0" prefWidth="180.0" style="-fx-background-color: #41545E#41545E #41545E#41545E;">
+         <children>
+            <Button fx:id="productButton" alignment="CENTER_RIGHT" layoutX="21.0" layoutY="74.0" mnemonicParsing="false" onAction="#productButtonOnAction" prefHeight="54.0" prefWidth="140.0" text="Ürünler">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="Futura Medium" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="employeeButton" alignment="CENTER_RIGHT" cache="true" layoutX="21.0" layoutY="219.0" mnemonicParsing="false" onAction="#employeeButtonOnAction" prefHeight="54.0" prefWidth="140.0" text="Çalışanlar">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="Futura Medium" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="placesButton" alignment="CENTER_RIGHT" layoutX="19.0" layoutY="366.0" mnemonicParsing="false" onAction="#placesButtonOnAction" prefHeight="54.0" prefWidth="140.0" text="Şubeler">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="Futura Medium" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="exitButton" layoutX="37.0" layoutY="495.0" mnemonicParsing="false" onAction="#exitButtonOnAction" prefHeight="32.0" prefWidth="109.0" text="Çıkış">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ImageView fx:id="productImageView" fitHeight="43.0" fitWidth="47.0" layoutX="30.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/stock.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="employeeImageView" fitHeight="43.0" fitWidth="47.0" layoutX="30.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/teamwork.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="placesImageView" fitHeight="43.0" fitWidth="47.0" layoutX="30.0" layoutY="372.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/market.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <TableView fx:id="tblDataView" layoutX="251.0" layoutY="267.0" prefHeight="284.0" prefWidth="816.0">
+        <columns>
+          <TableColumn fx:id="idColumn" prefWidth="75.0" text="id" />
+          <TableColumn fx:id="tradeNameColumn" prefWidth="100.0" text="tedarikciAdi" />
+            <TableColumn fx:id="tradeAddressColumn" prefWidth="171.0" text="tedarikciAdres" />
+            <TableColumn fx:id="productNameColumn" prefWidth="163.0" text="urunAdi" />
+            <TableColumn fx:id="priceColumn" prefWidth="77.0" text="fiyat" />
+            <TableColumn fx:id="stockColumn" prefWidth="81.0" text="stokDurumu" />
+            <TableColumn fx:id="categoryColumn" prefWidth="150.0" text="kategori" />
+        </columns>
+      </TableView>
+      <TextField fx:id="txtProductID" layoutX="362.0" layoutY="31.0" prefHeight="25.0" prefWidth="124.0" />
+      <Label layoutX="298.0" layoutY="35.0" prefHeight="16.0" prefWidth="55.0" text="Ürün ID:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="buyButton" layoutX="356.0" layoutY="155.0" mnemonicParsing="false" onAction="#buyButtonOnAction" prefHeight="32.0" prefWidth="134.0" style="-fx-background-color: #ECAF34;" text="Satın al" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ComboBox fx:id="cmbCategory" layoutX="617.0" layoutY="31.0" prefHeight="25.0" prefWidth="165.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ComboBox>
+      <Label layoutX="549.0" layoutY="36.0" prefHeight="18.0" prefWidth="63.0" text="Kategori:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="listButton" layoutX="618.0" layoutY="79.0" mnemonicParsing="false" onAction="#listButtonOnAction" prefHeight="32.0" prefWidth="165.0" style="-fx-background-color: #EC8134;" text="Listele" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <TextField fx:id="txtSearch" layoutX="354.0" layoutY="221.0" prefHeight="25.0" prefWidth="377.0" />
+      <Label layoutX="292.0" layoutY="221.0" prefHeight="25.0" prefWidth="55.0" text="Ürün Adı:" />
+      <Button fx:id="findButton" layoutX="743.0" layoutY="216.0" mnemonicParsing="false" onAction="#findButtonOnAction" prefHeight="32.0" prefWidth="109.0" text="Bul" textFill="#cd1a1a">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <TextField fx:id="txtStock" layoutX="362.0" layoutY="72.0" prefHeight="25.0" prefWidth="124.0" />
+      <Label layoutX="296.0" layoutY="72.0" prefHeight="25.0" prefWidth="63.0" text="Kaç adet:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbPlacesID" layoutX="362.0" layoutY="112.0" prefHeight="25.0" prefWidth="124.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ComboBox>
+      <Label layoutX="294.0" layoutY="112.0" prefHeight="25.0" prefWidth="63.0" text="Şube ID:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
